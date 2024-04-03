@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const http = require('http');
 
 process.on('uncaughtException', err => {
     console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -16,14 +17,14 @@ const DB = process.env.DATABASE.replace(
 );
 
 mongoose
-    .connect(DB, {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useFindAndModify: false
-    })
-    .then(() => console.log('DB connection successful!'));
+    .connect(DB)
+    .then(() => console.log('DB connection successful!'))
+    .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const port = process.env.PORT || 8000;
-const server = app.listen(port, () => {
+
+const server = http.createServer(app);
+
+server.listen(port, () => {
     console.log(`App running on port ${port}...`);
 });
