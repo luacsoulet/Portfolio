@@ -3,6 +3,8 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+const worksRoutes = require('./routes/work');
+
 // Start express app
 const app = express();
 
@@ -17,5 +19,7 @@ app.use((req, res, next) => {
 app.use(morgan('dev'));
 
 app.use(bodyParser.json());
+
+app.use('/api/v1/works', worksRoutes);
 
 module.exports = app;
