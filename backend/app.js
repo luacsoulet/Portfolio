@@ -1,7 +1,7 @@
-const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
+const path = require('path');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const worksRoutes = require('./routes/work');
 
@@ -15,10 +15,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(bodyParser.json());
+
 // Development logging
 app.use(morgan('dev'));
 
-app.use(bodyParser.json());
 
 app.use('/api/v1/works', worksRoutes);
 
