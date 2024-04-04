@@ -11,6 +11,7 @@ router
 router
     .route('/:id')
     .get(worksCtrl.getOneWork)
+    .patch(worksCtrl.modifyWork)
     .delete(worksCtrl.deleteWork);
 
 module.exports = router;
