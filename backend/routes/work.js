@@ -10,6 +10,7 @@ router
 
 router
     .route('/:id')
-    .get(worksCtrl.getOneWork);
+    .get(worksCtrl.getOneWork)
+    .delete(worksCtrl.deleteWork);
 
 module.exports = router;
