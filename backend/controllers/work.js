@@ -30,6 +30,16 @@ exports.getOneWork = (req, res, next) => {
     );
 };
 
+exports.modifyWork = (req, res, next) => {
+    const workObject = (req.body.work);
+    Work.updateOne({ _id: req.params.id }, { ...workObject, _id: req.params.id })
+        .then((work) => res.status(200).json({
+            status: 'Projet modifié !',
+            data: workObject
+        }))
+        .catch(error => res.status(401).json({ error }));
+};
+
 exports.deleteWork = (req, res, next) => {
     Work.deleteOne({ _id: req.params.id })
         .then(() => {
