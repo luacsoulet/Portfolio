@@ -11,6 +11,25 @@ exports.createWork = (req, res, next) => {
         .catch(error => { res.status(400).json({ error }) })
 };
 
+exports.getOneWork = (req, res, next) => {
+    Work.findOne({
+        _id: req.params.id
+    }).then(
+        (work) => {
+            res.status(200).json({
+                status: 'success',
+                data: work
+            });
+        }
+    ).catch(
+        (error) => {
+            res.status(401).json({
+                error: error
+            });
+        }
+    );
+};
+
 exports.getAllWorks = (req, res, next) => {
     Work.find()
         .then(
