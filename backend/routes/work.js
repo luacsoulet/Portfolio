@@ -8,4 +8,8 @@ router
     .get(worksCtrl.getAllWorks)
     .post(worksCtrl.createWork);
 
+router
+    .route('/:id')
+    .get(worksCtrl.getOneWork);
+
 module.exports = router;
