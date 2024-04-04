@@ -30,6 +30,14 @@ exports.getOneWork = (req, res, next) => {
     );
 };
 
+exports.deleteWork = (req, res, next) => {
+    Work.deleteOne({ _id: req.params.id })
+        .then(() => {
+            res.status(200).json({ message: 'Projet supprimé !' })
+        })
+        .catch(error => res.status(401).json({ error }));
+};
+
 exports.getAllWorks = (req, res, next) => {
     Work.find()
         .then(
@@ -44,7 +52,7 @@ exports.getAllWorks = (req, res, next) => {
             }
         ).catch(
             (error) => {
-                res.status(400).json({
+                res.status(401).json({
                     error: error
                 });
             }
