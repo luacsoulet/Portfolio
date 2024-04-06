@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 const worksRoutes = require('./routes/work');
+const userRoutes = require('./routes/user');
 
 // Start express app
 const app = express();
@@ -22,5 +23,6 @@ app.use(morgan('dev'));
 
 app.use('/images', express.static('./images'));
 app.use('/api/v1/works', worksRoutes);
+app.use('/api/v1/auth', userRoutes);
 
 module.exports = app;
