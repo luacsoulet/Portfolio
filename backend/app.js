@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 // Development logging
 app.use(morgan('dev'));
 
-
+app.use('/images', express.static('./images'));
 app.use('/api/v1/works', worksRoutes);
 
 module.exports = app;
