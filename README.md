@@ -20,3 +20,10 @@ For deploy Back-end of this project install and run
   npm i
   npm run start
 ```
+
+For deploy Front-end of this project install and run 
+
+```bash
+  npm i
+  npm run dev
+```
