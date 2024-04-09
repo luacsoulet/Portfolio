@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const workSchema = mongoose.Schema({
     title: { type: String, required: true },
-    description: { type: String, required: true },
+    description: {
+        type: [String],
+        required: true
+    },
     gitHubRepos: { type: String, required: true },
     figmaDesign: { type: String, required: true },
     sliderImages: {
