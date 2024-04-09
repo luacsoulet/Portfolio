@@ -18,7 +18,7 @@ For deploy Back-end of this project install and run
 
 ```bash
   npm i
-  npm run start
+  npm run dev
 ```
 
 For deploy Front-end of this project install and run 
