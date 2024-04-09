@@ -2,7 +2,7 @@ const Work = require('../models/work');
 
 exports.createWork = (req, res, next) => {
     const workObject = (req.body);
-    if (req.auth.userId != process.env.USER_ID) {
+    if (!req.auth.userId) {
         res.status(403).json({ message: 'Not authorized' });
     } else {
         const work = new Work({
@@ -38,7 +38,7 @@ exports.getOneWork = (req, res, next) => {
 
 exports.modifyWork = (req, res, next) => {
     const workObject = (req.body);
-    if (req.auth.userId != process.env.USER_ID) {
+    if (!req.auth.userId) {
         res.status(403).json({ message: 'Not authorized' });
     } else {
         Work.updateOne({ _id: req.params.id }, { ...workObject, _id: req.params.id })
@@ -51,7 +51,7 @@ exports.modifyWork = (req, res, next) => {
 
 exports.deleteWork = (req, res, next) => {
 
-    if (req.auth.userId != process.env.USER_ID) {
+    if (!req.auth.userId) {
         res.status(403).json({ message: 'Not authorized' });
     } else {
         Work.deleteOne({ _id: req.params.id })
