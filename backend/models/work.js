@@ -8,6 +8,7 @@ const workSchema = mongoose.Schema({
     },
     gitHubRepos: { type: String, required: true },
     figmaDesign: { type: String, required: true },
+    imageCover: { type: String, required: true },
     sliderImages: {
         type: [String],
         required: true
