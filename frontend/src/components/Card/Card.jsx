@@ -5,11 +5,11 @@ function Card({title, image, tags}) {
 
     console.log(tags)
     return (
-        <div className='work'>
-            <div className='work__image'><img src={image} alt={title} /></div>
-            <div className='work__content'>
-                <p className='work__content-title'>{title}</p>
-                <div className='work__content-tags'>
+        <div className='card'>
+            <div className='card__image'><img src={image} alt={title} /></div>
+            <div className='card__content'>
+                <p className='card__content-title'>{title}</p>
+                <div className='card__content-tags'>
                     {tags.map((tag , i) => (
                         <div key={`tag-${i}`} className='tag__container'>
                             <p className='tag__container-text'>{tag}</p>
