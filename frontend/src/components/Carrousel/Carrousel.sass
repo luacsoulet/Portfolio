@@ -1,0 +1,32 @@
+.carrousel
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 900px
+    height: 514px
+    overflow: hidden
+    &__buttons
+        z-index: 2
+        position: absolute
+        display: flex
+        gap: 5px
+        margin-top: 480px
+    &__button
+        height: 15px
+        width: 15px
+        border-radius: 50px
+        background: black
+        border: 1px solid rgba(222, 222, 222, 0.4)
+        
+    &__img-active
+        z-index: 1
+        position: absolute
+        top: 0
+        width: 100%
+        height: auto
+        border-radius: 5px
+        object-fit: cover
+
+.active
+    width: 30px
