@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Card from '../../components/Card/Card'
 import './Home.sass';
+import { Link } from 'react-router-dom'
 
 function Home(){
     const [workData, setWorkData] = useState([]);
@@ -28,12 +29,18 @@ function Home(){
                     {workData && workData.length > 0 ? (
 
                         workData.map((work, i) => (
-                            <Card 
+                            <Link 
+                                className='workLink'
                                 key={`work-${i}`}
-                                title={work.title}
-                                image={work.imageCover}
-                                tags={work.tags}
-                            />
+                                to={`/work/${work._id}`}>
+
+                                <Card 
+                                    key={`work-${i}`}
+                                    title={work.title}
+                                    image={work.imageCover}
+                                    tags={work.tags}
+                                />
+                            </Link>
                         ))
                     ) : (
                         <p>Chargement...</p>
