@@ -1,4 +1,4 @@
-.work
+.card
     height: 290px
     max-width: 400px
     display: flex
@@ -9,9 +9,13 @@
     border-radius:15px
     -webkit-backdrop-filter: blur(5px)
     border: 1px solid rgba(18, 17, 19, 0.3)
+    &:hover
+        transition: all 0.3s ease-in-out
+        background: rgba(18, 17, 19, 0.645)
 
     &__image
         max-height: 202px
+        max-width: 380px
         object-fit: cover
         overflow: hidden
         border-radius: 10px
@@ -25,7 +29,7 @@
         width: 100%
         maring: 44px 0px
         &-title
-            font-size: 32px
+            font-size: 26px
             font-weight: bold
             margin: 0
         &-tags
@@ -44,4 +48,4 @@
     &-text
         color: #121113
         font-weight: bold
-        font-size: 15px
+        font-size: 12.5px
