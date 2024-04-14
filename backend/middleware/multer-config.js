@@ -11,7 +11,7 @@ const upload = multer({
 
 exports.uploadWorkImages = upload.fields([
     { name: 'imageCover', maxCount: 1 },
-    { name: 'sliderImages', maxCount: 3 }
+    { name: 'sliderImages', maxCount: 4 }
 ]);
 
 exports.resizeWorksImages = async (req, res, next) => {
